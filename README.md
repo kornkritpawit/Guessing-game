@@ -20,7 +20,7 @@ const dbName = 'GuessingGame';
 4. run the script (same directory as server.js)
 
 ```terminal
-$npm start
+$ npm start
 ```
 6. The server will use port 3000.
 ```
