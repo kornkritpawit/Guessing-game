@@ -22,4 +22,8 @@ const dbName = 'GuessingGame';
 ```terminal
 $npm start
 ```
-5. Enjoy the game.
+6. The server will use port 3000.
+```
+localhost:3000
+```
+8. Enjoy the game.
