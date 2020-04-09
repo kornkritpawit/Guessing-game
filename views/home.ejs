@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <h1>Kritpawit Guessing Game</h1>
+        <% if (step == 0) { %>
+            <form action="/start" method="POST">
+                <button type="submit">Start Game</button>
+              </form>
+        <%} else if (set_left <=4 && set_left >0) {%>
+            <h2>
+                Choose A, B, C, or D to set the player to guess for the answer
+            </h2>
+            <h3>
+                Question: <%= question %>
+            </h3>
+            <h4>
+                pick left: <%= set_left %>
+            </h4>
+            <form action="/set_question" method="POST">
+                <input value="A" name="set" type="submit"/>
+                <input value="B" name="set" type="submit"/>
+                <input value="C" name="set" type="submit"/>
+                <input value="D" name="set" type="submit"/>
+            </form>
+
+        <%} else if(set_left==0 && guess_left!=0) {%>
+            <h3>Choose A,B,C,D to guess the question</h3>
+            <h4>Your Answer: <%= answer%></h4>
+            <h4>Answer left: <%=guess%></h4>
+            <h4>Guess left: <%= guess_left%></h4>
+            <h4>Fails: <%= fail%></h4>
+            <form action="/guessing" method="POST">
+                <input value="A" name="set2" type="submit"/>
+                <input value="B" name="set2" type="submit"/>
+                <input value="C" name="set2" type="submit"/>
+                <input value="D" name="set2" type="submit"/>
+            </form>
+        <%} else if(guess_left==0){%>
+            <h2>Finish</h2>
+            <form action="/finish" method="POST">
+            <button type="submit">Home</button>
+            </form>
+        <%}%>
+    </body>
+</html>
